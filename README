@@ -1,0 +1,40 @@
+NAME
+	fft - fast Fourier transform
+
+SYNOPSIS
+	#include "fft.h"
+
+	int	fft(double complex *const buf, size_t const n);
+
+DESCRIPTION
+	Header-only naive implementation of the fast Fourier transform
+	algorithm.
+
+	Requires C99, specifically complex.h.
+
+RETURN VALUE
+	Returns 0 on success, and -1 on error.
+
+ERRORS
+	fft() can fail with the following error:
+
+	EINVAL	Given n was not a power of two. You can pad with zeroes to avoid
+		this error.
+
+NOTES
+	By default, fft.h includes the libraries it needs. To remove FFT's
+	included libraries, #define FFT_NO_INCLUDES.
+
+	Unless FFT_NO_INCLUDES is defined, fft() uses math.h. In which case you
+	may need to link with -lm.
+
+	By default, fft() is declared `extern`. To have fft() be declared
+	`static`, #define FFT_PRIVATE.
+
+EXAMPLE
+	View example.c, which can be built with GCC using `make example`.
+
+SEE ALSO
+	The FFTW library provides an optimal implementation of the fast Fourier
+	transform algorithm.
+
