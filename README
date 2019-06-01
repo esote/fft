@@ -12,8 +12,11 @@ DESCRIPTION
 
 	Requires C99, specifically complex.h.
 
-RETURN VALUE
+RETURN VALUES
 	Returns 0 on success, and -1 on error.
+
+EXAMPLES
+	View example.c, which can be built with GCC using `make example`.
 
 ERRORS
 	fft() can fail with the following error:
@@ -22,7 +25,7 @@ ERRORS
 		this error.
 
 NOTES
-	By default, fft.h includes the libraries it needs. To remove FFT's
+	By default, fft.h includes the libraries it needs. To remove fft.h's
 	included libraries, #define FFT_NO_INCLUDES.
 
 	Unless FFT_NO_INCLUDES is defined, fft() uses math.h. In which case you
@@ -30,9 +33,6 @@ NOTES
 
 	By default, fft() is declared `extern`. To have fft() be declared
 	`static`, #define FFT_PRIVATE.
-
-EXAMPLE
-	View example.c, which can be built with GCC using `make example`.
 
 SEE ALSO
 	The FFTW library provides an optimal implementation of the fast Fourier

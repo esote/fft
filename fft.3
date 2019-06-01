@@ -1,0 +1,51 @@
+.Dd $Mdocdate: June 1 2019 $
+.Dt FFT 3
+.Os
+.Sh NAME
+.Nm fft
+.Nd fast Fourier transform
+.Sh SYNOPSIS
+.In fft.h
+.Ft int
+.Fo fft
+.Fa "double complex *const buf"
+.Fa "size_t const n"
+.Fc
+.Sh DESCRIPTION
+Header-only naive implementation of the fast Fourier transform algorithm.
+.Pp
+Requires C99, specifically \fB<complex.h>\fR.
+.Sh RETURN VALUES
+Returns 0 on success, and -1 on error.
+.Sh EXAMPLES
+View example.c, which can be built with
+.Xr gcc 1
+using \fBmake example\fR.
+.Sh ERRORS
+.Fn fft
+can fail with the following error:
+.Bl -tag -width Er
+.It Bq Er EINVAL
+Given
+.Fa n
+was not a power of two.
+You can pad with zeroes to avoid this error.
+.El
+.Sh NOTES
+By default \fB<fft.h>\fR includes the libraries it needs.
+To remove \fB<fft.h>\fR's included libraries, #define FFT_NO_INCLUDES.
+.Pp
+Unless FFT_NO_INCLUDES is defined,
+.Fn fft
+uses \fB<math.h>\fR.
+In which case you may need to link with \fB-lm\fR.
+.Pp
+By default
+.Fn fft
+is declared with \fBextern\fR.
+To have
+.Fn fft
+be declared with \fBstatic\fR, #define FFT_PRIVATE.
+.Sh SEE ALSO
+The FFTW library provides an optimal implementation of the fast Fourier
+transform algorithm.
