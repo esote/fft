@@ -1,4 +1,4 @@
-.Dd $Mdocdate: June 1 2019 $
+.Dd $Mdocdate: March 23 2021 $
 .Dt FFT 3
 .Os
 .Sh NAME
@@ -14,11 +14,14 @@
 .Sh DESCRIPTION
 Header-only naive implementation of the fast Fourier transform algorithm.
 .Pp
-Requires C99, specifically \fB<complex.h>\fR.
+Requires C99, specifically
+.In complex.h .
 .Sh RETURN VALUES
 Returns 0 on success, and -1 on error.
 .Sh EXAMPLES
-View example.c, which can be built with
+View
+.Pa example.c ,
+which can be built with
 .Xr gcc 1
 using \fBmake example\fR.
 .Sh ERRORS
@@ -32,12 +35,17 @@ was not a power of two.
 You can pad with zeroes to avoid this error.
 .El
 .Sh NOTES
-By default \fB<fft.h>\fR includes the libraries it needs.
-To remove \fB<fft.h>\fR's included libraries, #define FFT_NO_INCLUDES.
+By default
+.In fft.h
+includes the libraries it needs.
+To remove the libraries included by
+.In fft.h
+define FFT_NO_INCLUDES.
 .Pp
 Unless FFT_NO_INCLUDES is defined,
 .Fn fft
-uses \fB<math.h>\fR.
+uses
+.In math.h .
 In which case you may need to link with \fB-lm\fR.
 .Pp
 By default
@@ -45,7 +53,7 @@ By default
 is declared with \fBextern\fR.
 To have
 .Fn fft
-be declared with \fBstatic\fR, #define FFT_PRIVATE.
+be declared with \fBstatic\fR, define FFT_PRIVATE.
 .Sh SEE ALSO
 The FFTW library provides an optimal implementation of the fast Fourier
 transform algorithm.

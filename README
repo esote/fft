@@ -25,14 +25,14 @@ ERRORS
 		this error.
 
 NOTES
-	By default, fft.h includes the libraries it needs. To remove fft.h's
-	included libraries, #define FFT_NO_INCLUDES.
+	By default, fft.h includes the libraries it needs. To remove the
+	libraries included by fft.h define FFT_NO_INCLUDES.
 
 	Unless FFT_NO_INCLUDES is defined, fft() uses math.h. In which case you
 	may need to link with -lm.
 
 	By default, fft() is declared `extern`. To have fft() be declared
-	`static`, #define FFT_PRIVATE.
+	`static`, define FFT_PRIVATE.
 
 SEE ALSO
 	The FFTW library provides an optimal implementation of the fast Fourier
